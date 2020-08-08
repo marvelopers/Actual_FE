@@ -26,3 +26,12 @@ npx webpack-dev-server
 - forEach
 - map
 - filter
+
+
+## DSL
+ - babel
+ ```
+ npm i -D babel-loader
+ npm i -D babel-core
+ npm i -D @babel/preset-env @babel/preset-react
+ ```
