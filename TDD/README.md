@@ -14,5 +14,11 @@ npx jest --watchAll
 ```
 
 - Signature = name(add), Parameters(x,y), return(result)
+
 ## TDD Cycle 
 - RED - GREEN - REACTORING
+
+## TDD 실행
+```
+npm i -D @testing-library/react @testing-library/jest-dom
+```

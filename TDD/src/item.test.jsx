@@ -1,4 +1,7 @@
-const { render } = require("react-dom");
+import React from 'react';
+import { render, getByText, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom"; // jest config 생성
+import Item from './Item';
 
 test("Item", () => {
   const task = {
@@ -6,8 +9,22 @@ test("Item", () => {
     title: '매일매일 코딩하기'
   };
 
-  render(
-    <Item task={task} />
+  const handleClick = jest.fn();
+
+  // function handleClick() {
+  //   // 
+  // }
+
+  const { container, getByText } = render(
+    (<Item task={task} onClickDelete={handleClick} />)
   );
 
+  expect(container).toHaveTextContent('매일매일 코딩하기');
+  expect(container).toHaveTextContent('완료!');
+
+  const button = getByText('완료');
+  fireEvent.click(button);
+
+  expect(handleClick).toBeCalled();
+  expect(handleClick).toBeCalledWith(1);
 })
