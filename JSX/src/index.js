@@ -20,7 +20,7 @@ function render({ count }) {
         </button>
       </p>
       {[1, 2, 3].map((i) => {
-
+        <button type='button' onClick={() => { handleClickNumber(i) }}>{i}</button>
       })}
     </div>
   );
