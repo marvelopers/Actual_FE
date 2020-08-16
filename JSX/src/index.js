@@ -1,33 +1,34 @@
-console.log("HELLOW");
-const element = document.getElementById("app");
+// let보다 const를 사용하는 것이 좋다!
 
-console.log("element");
-const paragraph = document.createElement("p");
+function render({ count }) {
 
-const text = document.createTextNode("LoveU");
+  function handleClick() {
+    render({ count: count + 1 });
+  }
 
-paragraph.appendChild(text);
+  function handleClickNumber(value) {
+    render({ count: value });
+  }
 
-element.appendChild(paragraph);
+  const element = (
+    <div id="hello" className="greeting">
+      <p>Hello, world!</p>
+      <p>
+        <button type="button" onClick={() => handleClick()}>
+          Click me!
+          ({count})
+        </button>
+      </p>
+      {[1, 2, 3].map((i) => {
 
-function createElement(tagName, ...children) {
-  const element = document.createElement(tagName);
+      })}
+    </div>
+  );
 
-  children.forEach((child) => {
-    element.appendChild(child);
-  });
-  element.appendChild(children[0]);
-
-  return element;
+  document.getElementById('app').textContent = '';
+  document.getElementById('app').appendChild(element);
 }
 
-// const paragraph = createElement("p", document.createTextNode("hello Wolrd"));
-
-const container = document.getElementById("app");
-const root = document.createElement("div", paragraph);
-
-container.appendChild(paragraph);
-
-
-///
-
+render({
+  count: 0
+});
