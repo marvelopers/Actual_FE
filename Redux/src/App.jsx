@@ -1,12 +1,20 @@
-import React from "react";
-import ListContainer from "./ListContainer";
-import InputContainer from "./InputContainer";
+import React, { useEffect } from "react";
+import RestaurantContainer from "./RestaurantContainer";
+import { useDispatch } from "react-redux";
+import { setRestaurants } from "./action";
+import restaurants from "../fixtures/restaurants";
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatchEvent(setRestaurants(restaurants));
+  }, []);
+
   return (
     <div>
-      <InputContainer />
-      <ListContainer />
+      <h1>Restaurants</h1>
+      <RestaurantContainer />
     </div>
   );
 }

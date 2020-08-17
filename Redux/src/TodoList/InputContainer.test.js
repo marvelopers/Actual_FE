@@ -25,5 +25,5 @@ test("InputContainer", () => {
   expect(dispatch).toBeCalledWith({
     type: "addTask",
   });
-  // expect(getByTest(/New Title/)).not.toBeNull();
+  // expect(getByText(/New Title/)).not.toBeNull();
 });
