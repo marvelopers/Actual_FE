@@ -19,6 +19,7 @@
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "jest": "^26.4.0",
+    "jest-plugin-context": "^2.9.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"

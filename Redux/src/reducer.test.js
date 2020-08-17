@@ -1,20 +1,21 @@
 import reducer from "./reducer";
 import { updateTaskTitle, addTask, deleteTask } from "./actions";
 
-describe("rducer", () => {
+describe("reducer", () => {
   describe("updateTaskTitle", () => {
     it("returns new state with new task title", () => {
       const previousState = {
         taskTitle: "",
       };
       const state = reducer(previousState, updateTaskTitle("New Title"));
+
+      expect(state.taskTitle).toBe("New Title");
     });
-    expect(state.taskTitle).toBe("New Title");
   });
 
   describe("addTask", () => {
     function reduceAddTask(taskTitle) {
-      return ruducer(
+      return reducer(
         {
           newId: 100,
           taskTitle,

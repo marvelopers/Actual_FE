@@ -1,6 +1,5 @@
-
 // action creator
-export function updateTaskTitle(taksTitle) {
+export function updateTaskTitle(taskTitle) {
   return {
     type: "updateTaskTitle",
     payload: {
@@ -19,7 +18,8 @@ export function deleteTask(state, id) {
   const { taks } = state;
   return {
     type: "addTask",
-    payload :{
-      id
-    }
+    payload: {
+      id,
+    },
+  };
 }
