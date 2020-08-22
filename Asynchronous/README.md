@@ -21,3 +21,5 @@ https://meetup.toast.com/posts/92
 https://www.youtube.com/watch?v=RP_f5dMoHFc
 
 ### Resux-Thunk middleware
+
+API를 이용해 백엔드와 프론트 엔드가 비동기 통신을 하는 것
