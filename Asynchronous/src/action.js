@@ -38,9 +38,9 @@ export function selectRegion(regionId) {
   };
 }
 
-export function selectCatrgory(categoryId) {
+export function selectCategory(categoryId) {
   return {
-    type: "selectCatrgory",
+    type: "selectCategory",
     payload: { categoryId },
   };
 }

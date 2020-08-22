@@ -10,7 +10,7 @@ export default function RegionsContainer() {
   }));
   function handleClick(regionId) {
     dispatch(selectRegion(regionId));
-    dispatch(loadRestaurants(categoryId));
+    dispatch(loadRestaurants());
   }
   return (
     <ul>

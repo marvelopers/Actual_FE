@@ -1,5 +1,5 @@
 import React from "react";
-import { render, queryByText } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import App from "./App";
 import { useSelector, useDispatch } from "react-redux";
 import restaurants from "../fixtures/restaurants";
@@ -21,5 +21,6 @@ test("App", () => {
   expect(dispatch).toBeCalled();
 
   expect(getByText("서울")).not.toBeNull();
-  expect(queryByText("한식")).not.toBeNull();
+  expect(getByText("한식")).not.toBeNull();
+  //queryByText 로 되어 있었어요
 });

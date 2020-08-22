@@ -7,7 +7,7 @@ const initialState = {
 
 function equal(key, value) {
   return (obj) => {
-    obj.key === value;
+    return obj[key] === value;
   };
 }
 
@@ -32,9 +32,11 @@ const reducers = {
   },
   selectRegion(state, { payload: { regionId } }) {
     const { regions } = state;
+
     return {
       ...state,
       selectedRegion: regions.find(equal("id", regionId)),
+      //equal 함수가 값을 반환 하지 않고 있었어요 => {값} 가 아니라 => 값 또는 =>{return 값} 으로 처리되었어야 해요
     };
   },
   selectCategory(state, { payload: { categoryId } }) {
