@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, queryByText } from "@testing-library/react";
 import App from "./App";
 import { useSelector, useDispatch } from "react-redux";
 import restaurants from "../fixtures/restaurants";
@@ -11,21 +11,15 @@ test("App", () => {
   useSelector.mockImplementation((selector) =>
     selector({
       regions: [{ id: 1, name: "서울" }],
+      categories: [{ id: 1, name: "한식" }],
+      restaurants: [{ id: 1, name: "도쿄등심" }],
     })
   );
 
-  // useSelector.mockImplementation((selector) =>
-  //   selector({
-  //     restaurants: [],
-  //     restaurant: {},
-  //     categories: [],
-  //   })
-  // );
   const { getByText } = render(<App />);
 
   expect(dispatch).toBeCalled();
-  // expect(dispatch).toBeCalledWith({
-  //   type: "setRestaurants",
-  //   payload: { restaurants },
-  // });
+
+  expect(getByText("서울")).not.toBeNull();
+  expect(queryByText("한식")).not.toBeNull();
 });
