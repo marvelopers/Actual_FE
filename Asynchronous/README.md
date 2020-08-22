@@ -1,5 +1,6 @@
 # 비동기(Asynchronous) vs 동기(Synchronous)
 
+- API를 이용해 백엔드와 프론트 엔드가 비동기 통신을 하는 것
 - https://poiemaweb.com/js-async
 
 ### Promise
@@ -22,4 +23,4 @@ https://www.youtube.com/watch?v=RP_f5dMoHFc
 
 ### Resux-Thunk middleware
 
-API를 이용해 백엔드와 프론트 엔드가 비동기 통신을 하는 것
+미들웨어
