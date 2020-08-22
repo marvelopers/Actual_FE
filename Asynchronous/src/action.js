@@ -1,45 +1,32 @@
-import { fetchCategories } from "./sevices/api";
+import { fetchRegions, fetchCategories } from "./sevices/api";
 
-export function setRestaurants(restaurants) {
+export function setRegions(regions) {
   return {
-    type: "setRestaurants",
-    payload: {
-      restaurants,
-    },
-  };
-}
-// todo delete
-export function delete(restaurants) {
-  return {
-    type: "setRestaurants",
-    payload: {
-      restaurants,
-    },
-  };
-}
-
-export function loadRestaurants() {
-  return async (dispatch) => {
-    const restaurants = [];
-    //DO : fetch GET / categories
-    dispatch(setRestaurants(restaurants));
+    type: "setRegions",
+    payload: { regions },
   };
 }
 
 export function setCategories(categories) {
   return {
     type: "setCategories",
-    payload: {
-      categories,
-    },
+    payload: { categories },
   };
 }
 
-export function loadCategories() {
+export function loadInitialData() {
   return async (dispatch) => {
+    const regions = await fetchRegions();
+    dispatch(setRegions(regions));
+
     const categories = await fetchCategories();
-    //DO : fetch GET / categories
-    //REST - CURD => Read - collection / member, element
     dispatch(setCategories(categories));
+  };
+}
+
+export function selectRegion(regionId) {
+  return {
+    type: "selectRegion",
+    payload: { regionId },
   };
 }

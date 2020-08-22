@@ -10,16 +10,22 @@ test("App", () => {
   useDispatch.mockImplementation(() => dispatch);
   useSelector.mockImplementation((selector) =>
     selector({
-      restaurants: [],
-      restaurant: {},
-      categories: [],
+      regions: [{ id: 1, name: "서울" }],
     })
   );
+
+  // useSelector.mockImplementation((selector) =>
+  //   selector({
+  //     restaurants: [],
+  //     restaurant: {},
+  //     categories: [],
+  //   })
+  // );
   const { getByText } = render(<App />);
 
-  expect(dispatch).toBeCalledWith({
-    type: "setRestaurants",
-    payload: { restaurants },
-  });
-  // expect(getByText(/도쿄등심/)).not.toBeNull();
+  expect(dispatch).toBeCalled();
+  // expect(dispatch).toBeCalledWith({
+  //   type: "setRestaurants",
+  //   payload: { restaurants },
+  // });
 });

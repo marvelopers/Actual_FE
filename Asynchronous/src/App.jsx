@@ -1,41 +1,30 @@
 import React, { useEffect } from "react";
-import RestaurantContainer from "./RestaurantContainer";
-import CategoriesContainer from "./CategoriesContainer";
+import { loadInitialData } from "./action";
 import { useDispatch } from "react-redux";
-import { setRestaurants, loadRestaurants, loadCategories } from "./action";
-import restaurants from "../fixtures/restaurants";
+import RegionsContainer from "./RegionsContainer";
+// 0. 지역, 분류 목록을 얻기
+// 1. 지역 선택 : Regions | API(0)
+// 2. 분류 선택 : Category  한, 중, 일  | API(0)
+// 3. 식당 목록 : Restaurants | API(with region, category) 1,2가 모두 완료된 경우
 
-// async function loadCategories({ dispatch }) {
-//   const categories = await fetchCategories();
-//   //DO : fetch GET / categories
-//   //REST - CURD => Read - collection / member, element
-//   dispatch(setCategories(categories));
-// }
-
-function loadRestaurants({ dispatch }) {
-  const restaurants = [];
-  //DO : load restaurants from API server.
-  // 1. API server 확보
-  // 2. fetch
-  dispatch(setRestaurants(restaurants));
+function CategoriesContainer() {
+  return null;
 }
-
-// eatgo - customer - api.ahastudio.com / categories;
+function RestaurantsContainer() {
+  return null;
+}
 
 export default function App() {
   const dispatch = useDispatch();
-  // loadCategories({ dispatch });
-  // loadRestaurants({ dispatch });
   useEffect(() => {
-    dispatch(loadCategories());
-    dispatch(loadRestaurants());
-  }, []);
+    dispatch(loadInitialData());
+  });
 
   return (
     <div>
-      <h1>Restaurants</h1>
+      <RegionsContainer />
       <CategoriesContainer />
-      <RestaurantContainer />
+      <RestaurantsContainer />
     </div>
   );
 }
