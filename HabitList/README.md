@@ -10,3 +10,8 @@
 - React의 Event는 camelCase를 사용한다.
 - JSX를 사용해 문자열이 아닌 함수로 이벤트 핸들러를 전달한다.
 
+
+#### PureComponents
+> https://reactjs.org/docs/react-api.html#reactpurecomponent
+- shallowProps
+- object의 변경과 Obejct 내부의 data 변경의 차이
