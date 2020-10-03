@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useCallback } from "react";
+import { useEffect } from "react";
 
 export const SimpleHabit = (props) => {
   const [count, setCount] = useState(0);
@@ -7,6 +8,10 @@ export const SimpleHabit = (props) => {
   const handleIncrement = useCallback(() => {
     setCount(count + 1);
   });
+
+  useEffect(() => {
+    console.log(`mounted & updated!: ${count}`)
+  }, [count]);
   return (
     <li className="habit">
       <span ref={spanRef} className="habit-name">Reading</span>
