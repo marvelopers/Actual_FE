@@ -19,6 +19,22 @@ button {
   margin-right: 0.5em;
 }
 
+.add-input {
+  font-size: 2rem;
+}
+
+.add-input{
+  margin-right: 0.2em;
+}
+
+.add-button{
+  height: 100%;
+  font-size: 1.5rem;
+  padding: 0.3em 0.5em;
+  background-color: green;
+  color: white;
+}
+
 .navbar-count {
   display: inline-block;
   text-align: center;
