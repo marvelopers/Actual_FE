@@ -16,5 +16,8 @@
     "@babel/plugin-proposal-private-methods": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
